@@ -85,5 +85,6 @@ ReactDOM.render(
     </ApolloProvider>
   </BrowserRouter>,
   document.getElementById('root')
+  //this replaces the div with tag "root" with the actual react app
 )
 //registerServiceWorker()
