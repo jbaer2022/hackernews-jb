@@ -10,6 +10,7 @@ const VOTE_MUTATION = gql`
     vote(linkId: $linkId) {
       id
       link {
+        id
         votes {
           id
           user {
@@ -28,6 +29,8 @@ const VOTE_MUTATION = gql`
 class Link extends Component {
   render() {
     const authToken = localStorage.getItem(AUTH_TOKEN)
+    //const url = this.props.link.url
+    //const description = this.props.link.url
     return (
       <div className="flex mt2 items-start">
         <div className="flex items-center">
@@ -50,14 +53,21 @@ class Link extends Component {
         </div>
         <div className="ml1">
           <div>
-            {this.props.link.description} ({this.props.link.url})
+            <a href={this.props.link.url} target="_blank" >{this.props.link.description}</a> ({this.props.link.url})
           </div>
           <div className="f6 lh-copy gray">
-            {this.props.link.votes.length} votes | by{' '}
+            {this.props.link.votes.length} votes ~ first voter {''}
+            {this.props.link.votes[0]
+              ? this.props.link.votes[0].user.name
+              : 'hi'}| by{' '}
             {this.props.link.postedBy
               ? this.props.link.postedBy.name
               : 'Unknown'}{' '}
             {timeDifferenceForDate(this.props.link.createdAt)}
+            {/* {this.props.link.votes[0]>this.props.link.votes[this.props.link.votes.length-1]
+              ? "__vote ids: first " + this.props.link.votes[this.props.link.length-1].id + " last "+ his.props.link.votes[0].id
+              : "__vote ids: first " + this.props.link.votes[0].id + " last "+ his.props.link.votes[this.props.link.votes.length-1].id}
+            */}
           </div>
         </div>
       </div>
@@ -66,3 +76,4 @@ class Link extends Component {
 }
 
 export default Link
+//
