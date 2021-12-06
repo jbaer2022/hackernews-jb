@@ -64,6 +64,12 @@ class Link extends Component {
               ? this.props.link.postedBy.name
               : 'Unknown'}{' '}
             {timeDifferenceForDate(this.props.link.createdAt)}
+
+            {/* ideas:
+            maybe make line below: this.props.link.postedBy.group
+            have the user set their social security info at the Login.js page
+             */}
+            
             {/* {this.props.link.votes[0]>this.props.link.votes[this.props.link.votes.length-1]
               ? "__vote ids: first " + this.props.link.votes[this.props.link.length-1].id + " last "+ his.props.link.votes[0].id
               : "__vote ids: first " + this.props.link.votes[0].id + " last "+ his.props.link.votes[this.props.link.votes.length-1].id}

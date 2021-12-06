@@ -3,7 +3,8 @@ import { AUTH_TOKEN } from '../constants'
 import { Mutation } from 'react-apollo'
 import gql from 'graphql-tag'
 
-
+//Maybe add phone number here. Potentially switch phone to a String
+//, $phone: Int  and below that put  phone: $phone
 const SIGNUP_MUTATION = gql`
   mutation SignupMutation($email: String!, $password: String!, $name: String!) {
     signup(email: $email, password: $password, name: $name) {
