@@ -13,6 +13,7 @@ model Link {
   description String
   url         String
   postedBy    User     @relation(fields: [postedById], references: [id])
+  tag         String   @default("turkey")
   postedById  Int
   votes       Vote[]
 }
