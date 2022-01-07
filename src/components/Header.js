@@ -29,6 +29,11 @@ class Header extends Component {
                   </Link>
                 </div>
               )}
+              <div className="ml1">|</div>
+              <Link to="/hi" className="ml1 no-underline black">
+                hello
+              </Link>
+
             </div>
             <div className="flex flex-fixed">
               {authToken ? (
