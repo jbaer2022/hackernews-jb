@@ -31,7 +31,17 @@ class Header extends Component {
               )}
               <div className="ml1">|</div>
               <Link to="/hi" className="ml1 no-underline black">
-                hello
+                Hello
+              </Link>
+
+              <div className="ml1">|</div>
+              <Link to="/users" className="ml1 no-underline black">
+                Users
+              </Link>
+
+              <div className="ml1">|</div>
+              <Link to="/comments" className="ml1 no-underline black">
+                Comments
               </Link>
 
             </div>

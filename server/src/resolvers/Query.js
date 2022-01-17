@@ -16,12 +16,20 @@ async function feed(parent, args, context, info) {
     orderBy: args.orderBy
   });
 
+  const users = await context.prisma.user.findMany({
+    where,
+    skip: args.skip,
+    take: args.take,
+    userOrderBy: args.userOrderBy
+  });
+
   const count = await context.prisma.link.count({ where });
 
   return {
     id: 'main-feed',
     links,
-    count
+    count,
+    users
   };
 }
 

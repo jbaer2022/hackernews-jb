@@ -5,6 +5,7 @@ type Query {
     skip: Int
     take: Int
     orderBy: LinkOrderByInput
+    userOrderBy: UserOrderByInput
   ): Feed!
 }
 
@@ -12,6 +13,7 @@ type Feed {
   id: ID!
   links: [Link!]!
   count: Int!
+  users: [User!]
 }
 
 type Mutation {
@@ -62,6 +64,12 @@ input LinkOrderByInput {
   description: Sort
   url: Sort
   createdAt: Sort
+}
+
+input UserOrderByInput {
+  id: Sort
+  name: Sort
+  email: Sort
 }
 
 enum Sort {

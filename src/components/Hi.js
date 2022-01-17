@@ -101,7 +101,7 @@ const Hi = () => {
                   className="pointer mr2"
                   onClick={() => {
                     if (page > 1) {
-                      history.push(`/new/${page - 1}`);
+                      history.push(`/hi/${page - 1}`);
                     }
                   }}
                 >
@@ -115,7 +115,7 @@ const Hi = () => {
                       data.feed.count / LINKS_PER_PAGE
                     ) {
                       const nextPage = page + 1;
-                      history.push(`/new/${nextPage}`);
+                      history.push(`/hi/${nextPage}`);
                     }
                   }}
                 >

@@ -6,6 +6,8 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import Login from './Login'
 import Search from './Search'
 import Hi from './Hi'
+import UsersList from './UsersList'
+import Comments from './Comments'
 
 
 class App extends Component {
@@ -27,6 +29,10 @@ class App extends Component {
             <Route exact path='/hi' render={() => <Redirect to='/hi/1' />} />
             <Route exact path='/hi' component={Hi} />
             <Route exact path='/hi/:page' component={Hi} />
+
+            <Route exact path='/users' component={UsersList} />
+
+            <Route exact path='/comments' component={Comments} />
             
           </Switch>
         </div>
