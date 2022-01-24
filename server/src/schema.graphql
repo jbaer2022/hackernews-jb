@@ -12,6 +12,7 @@ type Query {
 type Feed {
   id: ID!
   links: [Link!]!
+  comments: [Comment!]!
   count: Int!
   users: [User!]
 }
@@ -25,11 +26,14 @@ type Mutation {
   ): AuthPayload
   login(email: String!, password: String!): AuthPayload
   vote(linkId: ID!): Vote
+  postcomment(descriptionC: String!): Comment!
 }
+
 
 type Subscription {
   newLink: Link
   newVote: Vote
+  newComment: Comment
 }
 
 type AuthPayload {
@@ -42,6 +46,15 @@ type User {
   name: String!
   email: String!
   links: [Link!]!
+  comments: [Comment!]!
+}
+
+type Comment {
+    id: ID!
+    createdAt: DateTime!
+    descriptionC: String!
+    postedBy: User
+
 }
 
 type Link {

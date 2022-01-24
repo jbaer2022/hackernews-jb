@@ -25,6 +25,16 @@ model User {
   password String
   links    Link[]
   votes    Vote[]
+  comments Comment[]
+}
+
+model Comment {
+  id          Int    @id @default(autoincrement())
+  createdAt   DateTime @default(now())
+  descriptionC String
+  postedById  Int
+  postedBy    User     @relation(fields: [postedById], references: [id])
+
 }
 
 model Vote {

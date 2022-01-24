@@ -40,6 +40,11 @@ class Header extends Component {
               </Link>
 
               <div className="ml1">|</div>
+              <Link to="/makecomment" className="ml1 no-underline black">
+                Make a Comment!
+              </Link>
+
+              <div className="ml1">|</div>
               <Link to="/comments" className="ml1 no-underline black">
                 Comments
               </Link>

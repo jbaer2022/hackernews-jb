@@ -7,7 +7,8 @@ import Login from './Login'
 import Search from './Search'
 import Hi from './Hi'
 import UsersList from './UsersList'
-import Comments from './Comments'
+import CommentList from './CommentList'
+import CreateComment from './CreateComment'
 
 
 class App extends Component {
@@ -32,7 +33,8 @@ class App extends Component {
 
             <Route exact path='/users' component={UsersList} />
 
-            <Route exact path='/comments' component={Comments} />
+            <Route exact path='/makecomment' component={CreateComment} />
+            <Route exact path='/comments' component={CommentList} />
             
           </Switch>
         </div>
