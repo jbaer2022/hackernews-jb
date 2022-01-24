@@ -48,7 +48,8 @@ class CreateComment extends Component {
                 query: FEED_QUERY,
                 variables: { first, skip, orderBy }
             })
-            data.feed.links.unshift(post)
+            //this is probably wrong because of links
+            data.feed.comments.unshift(post)
             store.writeQuery({
               query: FEED_QUERY,
               data,

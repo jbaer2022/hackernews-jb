@@ -9,6 +9,8 @@ import Hi from './Hi'
 import UsersList from './UsersList'
 import CommentList from './CommentList'
 import CreateComment from './CreateComment'
+import PicList from './PicList'
+import CreatePic from './CreatePic'
 
 
 class App extends Component {
@@ -35,6 +37,9 @@ class App extends Component {
 
             <Route exact path='/makecomment' component={CreateComment} />
             <Route exact path='/comments' component={CommentList} />
+
+            <Route exact path='/makepic' component={CreatePic} />
+            <Route exact path='/pics' component={PicList} />
             
           </Switch>
         </div>

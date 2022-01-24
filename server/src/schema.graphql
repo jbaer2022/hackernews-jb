@@ -15,6 +15,7 @@ type Feed {
   comments: [Comment!]!
   count: Int!
   users: [User!]
+  pics: [Pic!]!
 }
 
 type Mutation {
@@ -27,6 +28,7 @@ type Mutation {
   login(email: String!, password: String!): AuthPayload
   vote(linkId: ID!): Vote
   postcomment(descriptionC: String!): Comment!
+  postpic(description: String!, url: String!, tag: String!): Pic!
 }
 
 
@@ -34,6 +36,7 @@ type Subscription {
   newLink: Link
   newVote: Vote
   newComment: Comment
+  newPic: Pic
 }
 
 type AuthPayload {
@@ -47,6 +50,7 @@ type User {
   email: String!
   links: [Link!]!
   comments: [Comment!]!
+  pics: [Pic!]!
 }
 
 type Comment {
@@ -64,6 +68,15 @@ type Link {
   postedBy: User
   tag: String
   votes: [Vote!]!
+  createdAt: DateTime!
+}
+
+type Pic {
+  id: ID!
+  description: String!
+  url: String!
+  postedBy: User
+  tag: String
   createdAt: DateTime!
 }
 

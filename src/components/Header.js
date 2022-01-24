@@ -49,6 +49,16 @@ class Header extends Component {
                 Comments
               </Link>
 
+              <div className="ml1">|</div>
+              <Link to="/makepic" className="ml1 no-underline black">
+                Make a Pic!
+              </Link>
+
+              <div className="ml1">|</div>
+              <Link to="/pics" className="ml1 no-underline black">
+                Pictures
+              </Link>
+
             </div>
             <div className="flex flex-fixed">
               {authToken ? (

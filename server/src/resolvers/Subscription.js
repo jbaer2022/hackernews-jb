@@ -31,8 +31,21 @@ const newComment = {
   },
 }
 
+function newPicSubscribe(parent, args, context, info) {
+  return context.pubsub.asyncIterator("NEW_PIC")
+}
+
+const newPic = {
+  subscribe: newPicSubscribe,
+  resolve: payload => {
+    return payload
+  },
+}
+
+
 module.exports = {
   newLink,
   newComment,
-  newVote
+  newVote,
+  newPic
 }

@@ -32,6 +32,22 @@ function postcomment(parent, args, context, info) {
   return newComment;
 }
 
+function postpic(parent, args, context, info) {
+  const { userId } = context;
+
+  const newPic = context.prisma.comment.create({
+    data: {
+      description: args.description,
+      url: args.url,
+      tag: args.tag,
+      postedBy: { connect: { id: userId } }
+    }
+  });
+  context.pubsub.publish('NEW_PIC', newPic);
+
+  return newPic;
+}
+
 async function signup(parent, args, context, info) {
   const password = await bcrypt.hash(args.password, 10);
   const user = await context.prisma.user.create({
@@ -101,5 +117,6 @@ module.exports = {
   signup,
   login,
   postcomment,
+  postpic,
   vote
 };

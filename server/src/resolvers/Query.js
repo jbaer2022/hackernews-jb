@@ -20,6 +20,8 @@ async function feed(parent, args, context, info) {
 
   const comments = await context.prisma.comment.findMany({where});
 
+  const pics = await context.prisma.pic.findMany({where});
+
   const count = await context.prisma.link.count({ where });
 
   return {
@@ -27,7 +29,8 @@ async function feed(parent, args, context, info) {
     links,
     count,
     users,
-    comments
+    comments,
+    pics
   };
 }
 
